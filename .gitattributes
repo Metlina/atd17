@@ -1,0 +1,6 @@
+# force LF line endings on checkout for .sh files
+*.sh text eol=lf
+
+# force CRLF for VS project files
+*.sln text eol=crlf
+*.cs text eol=crlf

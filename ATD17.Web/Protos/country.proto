@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "ATD17.Web";
+
+import "google/protobuf/empty.proto";
+
+package atd18;
+
+service Country {
+  rpc GetStreamCountries(google.protobuf.Empty) returns (stream CountryResponse);
+  rpc GetCountries(google.protobuf.Empty) returns (CountriesResponse);
+  rpc GetCountry(CountryRequest) returns (CountryResponse);
+}
+
+message CountriesResponse {
+  repeated CountryResponse countries = 1;
+}
+
+message CountryRequest {
+  int32 id = 1;
+}
+
+message CountryResponse {
+  int32 id = 1;
+  string name = 2;
+  string code = 3;
+}
